@@ -1,13 +1,10 @@
 {
   "name": "multi-repo",
   "image": "mcr.microsoft.com/devcontainers/base:latest",
-  "features": {
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
-  },
   "remoteUser": "vscode",
   "containerUser": "vscode",
   // we're not using the default here, which is "workspaceMount": "source=${localWorkspaceFolder},target=/workspace/multi-repo,type=bind"
   "workspaceFolder": "/workspaces",
   "workspaceMount": "source=/workspaces,target=/workspaces,type=bind",
-  "onCreateCommand": "git clone https://github.com/gitpod-samples/spring-petclinic"
+  "onCreateCommand": "[ -d workshop ] || git clone https://github.com/ona-samples/workshop"
 }

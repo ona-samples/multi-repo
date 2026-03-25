@@ -1,7 +1,7 @@
 tasks:
-    build:
+    clone-repos:
         name: Clone additional repositories
         command: |
-            git clone https://github.com/gitpod-samples/gitpodflix-demo
-            git clone https://github.com/gitpod-samples/test
+            [ -d spring-petclinic ] || git clone https://github.com/ona-samples/spring-petclinic
+            [ -d private-market-hub ] || git clone https://github.com/ona-samples/private-market-hub
         triggeredBy: ['postDevcontainerStart', 'manual']
